@@ -30,15 +30,18 @@ export async function getAvailableSlots(pool: string, verbose: boolean = false):
 
     const results = await page.$$eval(".available > .event-time", handles => {
         const baseURI = document.baseURI;
-        return handles.map(event => {
+        return handles.map(eventEntry => {
             const
-                time = event.getAttribute("data-time"), timeZone = event.getAttribute("data-timezone");
+                ISODateTime = eventEntry.getAttribute("data-time"),
+                timeZone = eventEntry.getAttribute("data-timezone"),
+                [startTime, endTime] = Array.from(eventEntry.querySelectorAll("time")).map(timeEntry => timeEntry.dateTime);
             //debugger
             return {
-                dt: null,
-                time: time,
+                ISODateTime: ISODateTime,
+                startTime: startTime,
+                endTime: endTime,
                 timeZone: timeZone,
-                href: new URL(event.parentElement.getAttribute("href"), baseURI).toString()
+                href: new URL(eventEntry.parentElement.getAttribute("href"), baseURI).toString()
             };
         });
     }).then(results => {

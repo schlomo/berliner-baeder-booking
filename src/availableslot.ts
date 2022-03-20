@@ -1,24 +1,30 @@
 
-import { DateTime } from 'luxon'
+import { DateTime, Duration } from 'luxon'
 
 import { config } from "./config"
 
 export class AvailableSlot {
-    dt: DateTime
-    time: string
+    dt: DateTime = null
+    dtEnd: DateTime = null
+    ISODateTime: string
+    startTime: string
+    endTime: string
+    duration: Duration
     timeZone: string
     href: string
 
     constructor(data: Partial<AvailableSlot>) {
         Object.assign(this, data)
         if (!this.dt) {
-            this.dt = DateTime.fromISO(this.time).setZone(this.timeZone).setLocale("de-DE")
+            this.dt = DateTime.fromISO(this.ISODateTime).setZone(this.timeZone).setLocale("de-DE")
+            const slotDuration = Duration.fromISOTime(this.endTime).minus(Duration.fromISOTime(this.startTime))
+            this.dtEnd = this.dt.plus(slotDuration)
         }
+
     }
 
     public isDtInSlot(when: DateTime): boolean {
-        const endDt = this.dt.plus({ minutes: config.SLOT_DURATION })
-        return this.dt <= when && when <= endDt
+        return this.dt <= when && when <= this.dtEnd
     }
 
     // unused
@@ -30,7 +36,7 @@ export class AvailableSlot {
     }
 
     public toString(): string {
-        return this.dt.toLocaleString(config.DT_LOCALE_STRING_OPTIONS)
+        return this.dt.toLocaleString(config.DT_LOCALE_STRING_OPTIONS) + " → " + this.dtEnd.toFormat("HH:mm")
     }
 
 }
