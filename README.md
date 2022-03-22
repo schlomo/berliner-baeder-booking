@@ -10,7 +10,7 @@ Automate booking time slot tickets for public swimming pools in Berlin. This app
 
 `yarn dev` to run, `yarn dev help` for more details:
 
-```
+```text
 $ yarn dev help
 
   berliner-baeder-booking 1.0.0 — Automate booking time slot tickets for public swimming pools in Berlin
@@ -39,7 +39,6 @@ $ yarn dev help
                                          code.                                                  
 
 ```
-
 
 ## Improvements
 

@@ -13,7 +13,7 @@ program
     .name(pkg.name)
     .description(pkg.description)
     .version(pkg.version)
-    .bin(Object.keys(pkg.bin)[0])
+    .bin(pkg.name)
     .help(config.HELP_EXAMPLES)
 
     .command("pools", "List pools and courses")

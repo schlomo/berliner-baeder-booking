@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer'
 
 import { config } from './config'
 
@@ -18,12 +18,13 @@ export class Browser {
     static async getBrowser(): Promise<puppeteer.Browser> {
         if (Browser.browser === null) {
             return puppeteer.launch(PUPPETEER_LAUNCH_CONFIG).then((browser) => {
-                Browser.browser = browser;
-                //process.on('beforeExit', this.closeBrowser);
-                return browser;
+                Browser.browser = browser
+                // this is an extra precaution
+                process.on('beforeExit', this.closeBrowser)
+                return browser
             });
         }
-        return Browser.browser;
+        return Browser.browser
     }
 
     static async closeBrowser() {

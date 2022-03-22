@@ -1,11 +1,9 @@
 import { DateTime } from "luxon"
 import * as chrono from 'chrono-node'
 
-import puppeteer from 'puppeteer';
-
 import { emptyDirSync } from 'fs-extra'
 
-import { Browser, PUPPETEER_LAUNCH_CONFIG } from "./browser"
+import { Browser } from "./browser"
 import { config } from "./config"
 import { getAvailableSlots } from "./slots"
 
@@ -14,7 +12,7 @@ export async function bookSlotAsap({ args, options, logger }) {
         .then(slots => {
             if (slots.length > 0) {
                 // book slot
-                performBooking(slots[0].href, args.email, args.amount, options.v)
+                return performBooking(slots[0].href, args.email, args.amount, options.v)
             } else {
                 throw new Error('No slots available')
             }
@@ -61,8 +59,7 @@ export async function testBooking({ args, options, logger }) {
 }
 async function performBooking(url: string, email: string, amountToBook: number, verbose: boolean = false): Promise<void> {
     console.log(`Booking ${amountToBook} tickets for ${email} at ${url}`)
-    //const browser = await Browser.getBrowser()
-    const browser = await puppeteer.launch(PUPPETEER_LAUNCH_CONFIG)
+    const browser = await Browser.getBrowser()
     try {
 
         const page = await browser.newPage()
@@ -89,7 +86,7 @@ async function performBooking(url: string, email: string, amountToBook: number, 
                 await page.type("input.form-control.input-item-count", sessionAmount.toString())
                 amountBooked+=sessionAmount
             } catch (e) {
-                console.error(e)
+                console.dir(e.msg)
                 console.log("trying single ticket")
                 try {
                     await page.click('input[aria-label*="BäderCard"]')
@@ -157,7 +154,6 @@ async function performBooking(url: string, email: string, amountToBook: number, 
     } catch (error) {
         console.error(error)
     }
-    return browser.close()
 }
 
 function nowDt(): DateTime {
