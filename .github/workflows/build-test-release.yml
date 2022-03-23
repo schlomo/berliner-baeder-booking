@@ -23,6 +23,7 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
+    - run: git fetch --prune --unshallow --tags
     - run: git log --all
     - run: git describe --long
     - name: Setup Node 17
