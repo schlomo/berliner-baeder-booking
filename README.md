@@ -13,7 +13,7 @@ Automate booking time slot tickets for public swimming pools in Berlin. This app
 ```text
 $ yarn dev help
 
-  berliner-baeder-booking 1.0.0 — Automate booking time slot tickets for public swimming pools in Berlin
+  berliner-baeder-booking v1-10-g48b68a9 — Automate booking time slot tickets for public swimming pools in Berlin
 
   USAGE 
   
