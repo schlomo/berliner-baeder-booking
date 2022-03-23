@@ -7,7 +7,7 @@ export const PUPPETEER_LAUNCH_CONFIG = {
     devtools: !config.HEADLESS,
     slowMo: 0,
     // avoid https://github.com/puppeteer/puppeteer/issues/4752 by using installed Chrome and hope it works
-    //args: process.platform == "darwin" ? ['--no-sandbox', '--disable-setuid-sandbox'] : [],
+    args: process.env.BBB_IN_DOCKER ? ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] : [],
     //executablePath: process.platform == "darwin" ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" : null
 }
 

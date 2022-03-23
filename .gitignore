@@ -1,6 +1,7 @@
+screenshots
+
 src/*.js
 src/*.map
-*.png
 
 .yarn/*
 !.yarn/patches
@@ -13,5 +14,3 @@ src/*.map
 # Documentation here: https://yarnpkg.com/features/zero-installs
 !.yarn/cache
 #.pnp.*
-node_modules
-screenshots

@@ -17,15 +17,20 @@ $ yarn dev help
 
   USAGE 
   
-    ▸ 0 <command> [ARGUMENTS...] [OPTIONS...]
+    ▸ berliner-baeder-booking <command> [ARGUMENTS...] [OPTIONS...]
 
 
-  COMMANDS — Type '0 help <command>' to get some help about a command
+  Examples:
+  asap "Mariendorf (" your@email.domain
+  book lankwitz Donnerstag 17:00 your@email.domain 5
+
+
+  COMMANDS — Type 'berliner-baeder-booking help <command>' to get some help about a command
 
     pools                                List pools and courses                                 
     slots                                List available time slots for a pool                   
-    book                                 Book a slot                                            
-    test                                 Test                                                   
+    book                                 Book a slot for specific date and time                 
+    asap                                 Book a slot as soon as possible                        
 
   GLOBAL OPTIONS
 
@@ -42,7 +47,5 @@ $ yarn dev help
 
 ## Improvements
 
-* Wait till 4 days before the beginning of a slot time and then start polling
-* Explore why reusing the browser for the booking doesn't work
 * Smarter waiting with less frequent polling
 * Automated tests?

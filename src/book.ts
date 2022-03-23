@@ -57,6 +57,7 @@ export async function bookSlot({ args, options, logger }) {
 export async function testBooking({ args, options, logger }) {
     return performBooking("https://pretix.eu/Baeder/26/2504572/", "hello", 2)
 }
+
 async function performBooking(url: string, email: string, amountToBook: number, verbose: boolean = false): Promise<void> {
     console.log(`Booking ${amountToBook} tickets for ${email} at ${url}`)
     const browser = await Browser.getBrowser()
