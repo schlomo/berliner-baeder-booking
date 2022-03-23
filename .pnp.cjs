@@ -41,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["caporal", "npm:1.4.0"],\
             ["chrono-node", "npm:2.3.8"],\
             ["fs-extra", "npm:10.0.1"],\
+            ["git-describe", "npm:4.1.0"],\
             ["luxon", "npm:2.3.1"],\
             ["puppeteer", "npm:13.5.1"],\
             ["ts-node", "virtual:88206078be1143d844b6795c6afef21c3ed165a45de38d95903dd32cfec0b906c90ef43b7fcfeaea29bc2b4a2fa0537a5c10b59227b177f4db2eaf48270e3fcf#npm:10.7.0"],\
@@ -205,6 +206,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/puppeteer", "npm:5.4.5"],\
             ["@types/node", "npm:17.0.21"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/semver", [\
+        ["npm:7.3.9", {\
+          "packageLocation": "./.yarn/cache/@types-semver-npm-7.3.9-eb0d8b7243-60bfcfdfa7.zip/node_modules/@types/semver/",\
+          "packageDependencies": [\
+            ["@types/semver", "npm:7.3.9"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -445,6 +455,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["caporal", "npm:1.4.0"],\
             ["chrono-node", "npm:2.3.8"],\
             ["fs-extra", "npm:10.0.1"],\
+            ["git-describe", "npm:4.1.0"],\
             ["luxon", "npm:2.3.1"],\
             ["puppeteer", "npm:13.5.1"],\
             ["ts-node", "virtual:88206078be1143d844b6795c6afef21c3ed165a45de38d95903dd32cfec0b906c90ef43b7fcfeaea29bc2b4a2fa0537a5c10b59227b177f4db2eaf48270e3fcf#npm:10.7.0"],\
@@ -1148,6 +1159,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["git-describe", [\
+        ["npm:4.1.0", {\
+          "packageLocation": "./.yarn/cache/git-describe-npm-4.1.0-427aaefff6-8563a4c858.zip/node_modules/git-describe/",\
+          "packageDependencies": [\
+            ["git-describe", "npm:4.1.0"],\
+            ["@types/semver", "npm:7.3.9"],\
+            ["lodash", "npm:4.17.21"],\
+            ["semver", "npm:5.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["glob", [\
         ["npm:7.2.0", {\
           "packageLocation": "./.yarn/cache/glob-npm-7.2.0-bb4644d239-78a8ea9423.zip/node_modules/glob/",\
@@ -1405,6 +1428,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/lodash-npm-4.17.15-566d9324f7-bb689bc88c.zip/node_modules/lodash/",\
           "packageDependencies": [\
             ["lodash", "npm:4.17.15"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:4.17.21", {\
+          "packageLocation": "./.yarn/cache/lodash-npm-4.17.21-6382451519-eb835a2e51.zip/node_modules/lodash/",\
+          "packageDependencies": [\
+            ["lodash", "npm:4.17.21"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1969,6 +1999,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/safer-buffer-npm-2.1.2-8d5c0b705e-cab8f25ae6.zip/node_modules/safer-buffer/",\
           "packageDependencies": [\
             ["safer-buffer", "npm:2.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["semver", [\
+        ["npm:5.7.1", {\
+          "packageLocation": "./.yarn/cache/semver-npm-5.7.1-40bcea106b-57fd0acfd0.zip/node_modules/semver/",\
+          "packageDependencies": [\
+            ["semver", "npm:5.7.1"]\
           ],\
           "linkType": "HARD"\
         }]\

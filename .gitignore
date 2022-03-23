@@ -1,7 +1,10 @@
 screenshots
 
-src/*.js
-src/*.map
+VERSION
+src/version.*
+
+*.js
+*.map
 
 .yarn/*
 !.yarn/patches

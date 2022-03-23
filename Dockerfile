@@ -1,16 +1,19 @@
-FROM node:slim
+FROM alpine
 
-# Source: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker
-# check there for explanations about this Dockerfile
-
-RUN apt-get update \
-    && apt-get install -y dumb-init chromium fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
-      --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache \
+  ca-certificates \
+  chromium \
+  dumb-init \
+  freetype \
+  harfbuzz \
+  nodejs \
+  nss \
+  ttf-freefont \
+  yarn
 
 ENTRYPOINT [ "dumb-init", "--", "node", "-r", "./.pnp.cjs", "src/main.js"]
 
-RUN useradd -m -U -G audio,video pptruser
+RUN addgroup pptruser && adduser -D -G pptruser pptruser
 
 USER pptruser
 
@@ -20,7 +23,7 @@ COPY --chown=pptruser:pptruser . bbb
 WORKDIR /home/pptruser/bbb
 
 ENV \
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser \
     PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     BBB_IN_DOCKER=true
 

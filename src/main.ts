@@ -9,10 +9,15 @@ import { listPools } from './pools'
 import { bookSlot, bookSlotAsap, testBooking } from './book'
 import { config } from './config'
 
+let VERSION = "development"
+try { VERSION = require("./version").VERSION } catch { }
+
+console.log(pkg.name + " " + VERSION)
+
 program
     .name(pkg.name)
     .description(pkg.description)
-    .version(pkg.version)
+    .version(VERSION)
     .bin(pkg.name)
     .help(config.HELP_EXAMPLES)
 
