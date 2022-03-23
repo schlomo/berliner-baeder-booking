@@ -23,11 +23,12 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: Setup Node 16
+    - run: git log --all
+    - run: git describe --long
+    - name: Setup Node 17
       uses: actions/setup-node@v3
       with:
-        node-version: 17.x
-    - run: yarn set version stable
+        node-version: 17
     - run: yarn
     - run: yarn version
     - name: Check & Set VERSION
@@ -59,11 +60,11 @@ jobs:
       with:
         context: .
         load: true
-        tags: test
+        tags: bbb
     - name: Test
       run: |
         docker images
-        docker run --rm -it test | tee /dev/stderr | grep lankwitz
+        docker run --rm bbb | tee /dev/stderr | grep --color -i lankwitz
 
     - name: Docker build and push
       uses: docker/build-push-action@v2
