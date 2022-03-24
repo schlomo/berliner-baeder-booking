@@ -1,4 +1,4 @@
-name: Build & Release Agent
+name: Build & Release
 
 on:
   push:
@@ -41,35 +41,37 @@ jobs:
       uses: docker/setup-qemu-action@v1
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
-    - name: Log in to the Container registry
-      uses: docker/login-action@v1
-      with:
-        registry: ${{ env.REGISTRY }}
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set latest Container tag
       id: latesttag
       run: |
         echo "::set-output name=container_tag::$IMAGE_NAME:latest"
 
-    - name: Docker build and push
+    - name: Docker build
       uses: docker/build-push-action@v2
       with:
         context: .
         load: true
         tags: bbb
-    - name: Test
+    - name: Test Docker image
       run: |
-        docker images
-        docker run --rm bbb | tee /dev/stderr | grep --color -i lankwitz
+        docker run --rm bbb | tee /dev/stderr | grep -i lankwitz
 
+    - name: Log in to the Container registry
+      uses: docker/login-action@v1
+      # Container push only for push, not on PR
+      if: ${{ github.event_name == 'push' }}
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     - name: Docker build and push
       uses: docker/build-push-action@v2
+      # Container push only for push, not on PR
+      if: ${{ github.event_name == 'push' }}
       with:
         context: .
-        # Container push only for push, not on PR
-        push: ${{ github.event_name == 'push' }} 
+        push: true 
         platforms: linux/amd64,linux/arm64
         tags: ${{ join(steps.*.outputs.container_tag, ',') }}
 

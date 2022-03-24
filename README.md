@@ -2,16 +2,41 @@
 
 Automate booking time slot tickets for public swimming pools in Berlin. This application will book tickets for the next available slot or a given time slot. The tickets only represent a time slot, you still need entrance tickets, which you can purchase at the entrance.
 
-## Installation
-
-`yarn` should do everything right
-
 ## Usage
 
-`yarn dev` to run, `yarn dev help` for more details:
+The recommended way to use this is via the [Docker image](https://github.com/schlomo/berliner-baeder-booking/pkgs/container/berliner-baeder-booking) as it contains the latest tested version.
+
+### Example
+
+```bash
+$ docker run --rm ghcr.io/schlomo/berliner-baeder-booking slots lankwitz
+berliner-baeder-booking e477390
+Using pool Stadtbad Lankwitz
+Available slots:
+Thu, March 24, 2022, 10:15 AM → 13:15
+Thu, March 24, 2022, 01:30 PM → 16:30
+Thu, March 24, 2022, 08:00 PM → 22:00
+Fri, March 25, 2022, 08:00 AM → 10:00
+Fri, March 25, 2022, 10:15 AM → 13:15
+Fri, March 25, 2022, 01:30 PM → 16:30
+Fri, March 25, 2022, 08:00 PM → 22:00
+Sat, March 26, 2022, 06:45 PM → 22:00
+Sun, March 27, 2022, 06:45 PM → 22:00
+Mon, March 28, 2022, 08:00 AM → 10:00
+```
+
+### Installation
+
+To make calling the tool easier I suggest to set an alias, e.g. add this to your `~/.bash_profile` or appropriate shell configuration file:
+
+```bash
+alias bbb="docker run --rm ghcr.io/schlomo/berliner-baeder-booking"
+```
+
+### Complete Help
 
 ```text
-$ yarn dev help
+$ bbb help
 
   berliner-baeder-booking v1-10-g48b68a9 — Automate booking time slot tickets for public swimming pools in Berlin
 
@@ -45,7 +70,14 @@ $ yarn dev help
 
 ```
 
+## Development
+
+Install [NodeJS](https://nodejs.org/) version 17 and [activate yarn](https://yarnpkg.com/getting-started/install). Run `yarn` for setup, we use Yarn v3 and PNP.
+
+Use `yarn dev` to run from source.
+
 ## Improvements
 
+* Add documentation for Windows users (Pull Request is welcome)
 * Smarter waiting with less frequent polling
 * Automated tests?

@@ -1,5 +1,9 @@
 FROM alpine
 
+LABEL \
+  org.opencontainers.image.source="https://github.com/schlomo/berliner-baeder-booking" \
+  org.opencontainers.image.description="Berliner Bäder Booking"
+
 RUN apk add --no-cache \
   ca-certificates \
   chromium \
