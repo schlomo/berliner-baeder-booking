@@ -58,7 +58,7 @@ jobs:
         docker run --rm bbb | tee /dev/stderr | grep -i lankwitz
 
     - name: Log in to the Container registry
-      uses: docker/login-action@v1
+      uses: docker/login-action@v2
       # Container push only for push, not on PR
       if: ${{ github.event_name == 'push' }}
       with:
