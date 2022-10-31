@@ -36,7 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@caporal/core", "npm:2.0.2"],\
             ["@types/fs-extra", "npm:9.0.13"],\
             ["@types/luxon", "npm:2.3.1"],\
-            ["@types/node", "npm:17.0.22"],\
+            ["@types/node", "npm:18.11.8"],\
             ["@types/puppeteer", "npm:5.4.5"],\
             ["caporal", "npm:1.4.0"],\
             ["chrono-node", "npm:2.3.8"],\
@@ -196,6 +196,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-17.0.22-160c37d7fc-72d1fc8bdc.zip/node_modules/@types/node/",\
           "packageDependencies": [\
             ["@types/node", "npm:17.0.22"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:18.11.8", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-18.11.8-5b4d1461bd-60b358f97c.zip/node_modules/@types/node/",\
+          "packageDependencies": [\
+            ["@types/node", "npm:18.11.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -450,7 +457,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@caporal/core", "npm:2.0.2"],\
             ["@types/fs-extra", "npm:9.0.13"],\
             ["@types/luxon", "npm:2.3.1"],\
-            ["@types/node", "npm:17.0.22"],\
+            ["@types/node", "npm:18.11.8"],\
             ["@types/puppeteer", "npm:5.4.5"],\
             ["caporal", "npm:1.4.0"],\
             ["chrono-node", "npm:2.3.8"],\
@@ -1894,7 +1901,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["puppeteer", [\
         ["npm:13.5.1", {\
-          "packageLocation": "./.yarn/unplugged/puppeteer-npm-13.5.1-231e586c7a/node_modules/puppeteer/",\
+          "packageLocation": "./.yarn/cache/puppeteer-npm-13.5.1-231e586c7a-adf7511977.zip/node_modules/puppeteer/",\
           "packageDependencies": [\
             ["puppeteer", "npm:13.5.1"],\
             ["cross-fetch", "npm:3.1.5"],\
@@ -2073,7 +2080,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["spawn-sync", [\
         ["npm:1.0.15", {\
-          "packageLocation": "./.yarn/unplugged/spawn-sync-npm-1.0.15-ae144228c0/node_modules/spawn-sync/",\
+          "packageLocation": "./.yarn/cache/spawn-sync-npm-1.0.15-ae144228c0-a280ff895b.zip/node_modules/spawn-sync/",\
           "packageDependencies": [\
             ["spawn-sync", "npm:1.0.15"],\
             ["concat-stream", "npm:1.6.2"],\
@@ -2352,7 +2359,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.9"],\
             ["@tsconfig/node14", "npm:1.0.1"],\
             ["@tsconfig/node16", "npm:1.0.2"],\
-            ["@types/node", "npm:17.0.22"],\
+            ["@types/node", "npm:18.11.8"],\
             ["@types/swc__core", null],\
             ["@types/swc__wasm", null],\
             ["@types/typescript", null],\
