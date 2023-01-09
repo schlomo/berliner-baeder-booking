@@ -42,7 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["chrono-node", "npm:2.3.8"],\
             ["fs-extra", "npm:10.0.1"],\
             ["git-describe", "npm:4.1.0"],\
-            ["luxon", "npm:2.3.1"],\
+            ["luxon", "npm:2.5.2"],\
             ["puppeteer", "npm:13.5.1"],\
             ["ts-node", "virtual:88206078be1143d844b6795c6afef21c3ed165a45de38d95903dd32cfec0b906c90ef43b7fcfeaea29bc2b4a2fa0537a5c10b59227b177f4db2eaf48270e3fcf#npm:10.7.0"],\
             ["typescript", "patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"]\
@@ -456,7 +456,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["chrono-node", "npm:2.3.8"],\
             ["fs-extra", "npm:10.0.1"],\
             ["git-describe", "npm:4.1.0"],\
-            ["luxon", "npm:2.3.1"],\
+            ["luxon", "npm:2.5.2"],\
             ["puppeteer", "npm:13.5.1"],\
             ["ts-node", "virtual:88206078be1143d844b6795c6afef21c3ed165a45de38d95903dd32cfec0b906c90ef43b7fcfeaea29bc2b4a2fa0537a5c10b59227b177f4db2eaf48270e3fcf#npm:10.7.0"],\
             ["typescript", "patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"]\
@@ -1529,10 +1529,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["luxon", [\
-        ["npm:2.3.1", {\
-          "packageLocation": "./.yarn/cache/luxon-npm-2.3.1-5e98793c95-ce5eec873a.zip/node_modules/luxon/",\
+        ["npm:2.5.2", {\
+          "packageLocation": "./.yarn/cache/luxon-npm-2.5.2-d4f55f89d0-d8b671ffd2.zip/node_modules/luxon/",\
           "packageDependencies": [\
-            ["luxon", "npm:2.3.1"]\
+            ["luxon", "npm:2.5.2"]\
           ],\
           "linkType": "HARD"\
         }]\
