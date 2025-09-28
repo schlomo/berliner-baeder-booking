@@ -1,3 +1,5 @@
+# ARCHIVED - legacy dead code
+
 # Automated Ticket Booking for Berliner Bäder
 
 Automate booking time slot tickets for public swimming pools in Berlin. This application will book tickets for the next available slot or a given time slot. The tickets only represent a time slot, you still need entrance tickets, which you can purchase at the entrance.
